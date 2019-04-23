@@ -19,7 +19,7 @@ You need to run the following files to finish the training progress.
 * `./train_model/train_encoder_P/Encoder_P_train.py`
 * `./train_model/train_NN/NN_classify_train.py`
 
-NOTE: the third NN_classify_train.py should run after the Encoder_D_train.py and Encoder_P_train
+NOTE: The NN_classify_train.py should run after the Encoder_D_train.py and Encoder_P_train.py
 
 
 
@@ -29,30 +29,30 @@ NOTE: the third NN_classify_train.py should run after the Encoder_D_train.py and
 python3 manage.py runserver 127.0.0.1:8000
 `
 
-then open the chrome webdriver, the get to 127.0.0.1:8000
+Then open the chrome browser, the get to 127.0.0.1:8000
 
 ## Dataset
-the dataset is from [DrugBank](https://www.drugbank.ca).   
+The dataset is from [DrugBank](https://www.drugbank.ca).   
 
-the data files is in the data_process_to_fingerprint directory.
+Data files used in training process is in the data_process_to_fingerprint directory.
 
 
 ## Description of the directory
 * API   
-the directory contains some API of the model, it is directly called by Django APP.
+The directory contains some API of the model, it is directly called by Django APP.
 * data_process_to_fingerprint   
-the directory contains all of the dataset, and some function that transfer the origin drug SMILES and pretion sequence to fingerprints.
+The directory contains all of the dataset, and some function that transfer the origin drug SMILES and pretion sequence to fingerprints.
 * DrugTargetInteractionWebPlatform, static, templates, APP    
 All of them are some necessary component of Django.
-* model_files
-the directory that store the model files
-* train_model
-the code that train different component of our system.
+* model_files   
+The directory that store the model files
+* train_model   
+The code that train different component of our system.
 
 
 
 
-### the work is based on the following papers:
+### The work is based on the following papers:
 - Wang, L , et al. "A Computational-Based Method for Predicting Drug-Target Interactions by Using Stacked Autoencoder Deep Neural Network." Journal of Computational Biology A Journal of Computational Molecular Cell Biology 25.3(2017).
 - Wen, Ming , et al. "Deep-Learning-Based Drug–Target Interaction Prediction." Journal of Proteome Research 16.4(2017):1401-1409.
 - Peng-Wei, K. C. C. Chan , and Z. H. You . "Large-scale prediction of drug-target interactions from deep representations." 2016 International Joint Conference on Neural Networks (IJCNN) IEEE, 2016.
