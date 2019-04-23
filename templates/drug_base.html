@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>药物库</title>
+    <link rel="stylesheet" href="/static/drug_base.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico"/>
+</head>
+<body id="body_div">
+    <div class="up_title">
+        <h1>
+            药物信息库
+        </h1>
+    </div>
+    <table class="table table_res_XXX" style="word-break:break-all; word-wrap:break-spaces;">
+        <thead>
+            <tr>
+                <th style="width: 5%">序号</th>
+                <th style="width: 10%">药物ID</th>
+                <th style="width: 85%">药物SMILES表达式</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in lines %}
+                <tr class="active">
+                <td>{{ line.0 }}</td>
+                <td>{{ line.1 }}</td>
+                <td>{{ line.2 }}</td>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+</body>
+</html>

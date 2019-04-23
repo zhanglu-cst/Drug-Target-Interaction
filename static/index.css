@@ -1,0 +1,32 @@
+
+html {
+    height:100%;
+}
+
+#body_div{
+    background-image:url("/static/indexback.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#upper{
+    height: 9%;
+}
+
+.show{
+    border: 2px solid green;
+}
+
+.slogan{
+    text-align: center;
+    margin-bottom: 100px;
+    color: #4472C4;
+    text-shadow: 2px 2px white;
+}
+.sloganh1{
+    font-size: 3em;
+}

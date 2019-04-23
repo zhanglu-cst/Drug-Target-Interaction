@@ -1,0 +1,47 @@
+html {
+    height:100%;
+}
+
+#body_div{
+    background-image:url("/static/base_back.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    height: 100%;
+}
+
+
+.up_title{
+    margin-top: 4%;
+    text-align: center;
+    color: #4472C4;
+    text-shadow: 2px 2px white;
+}
+
+
+
+
+
+.show_res_XXX{
+    margin-top: 3%;
+}
+
+
+.show{
+    border: 2px solid green;
+}
+
+
+
+.show_label_molecule_XXX{
+    font-size: 2em;
+    color: darkgreen;
+    position: relative;
+    top: 129px;
+}
+
+.table_res_XXX{
+    table-layout:fixed;
+}

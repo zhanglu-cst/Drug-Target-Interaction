@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特定药物的靶标预测</title>
+    <link rel="stylesheet" href="/static/target_predict.css">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico"/>
+</head>
+<body id="body_div">
+    <div class="up_title">
+        <h1>
+            特定药物的靶标预测
+        </h1>
+    </div>
+    <form class="form-horizontal input_drug_form" role="form" action="targetPredict" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="drug_input" class="col-lg-3 control-label input_label_XXX">药物:</label>
+            <div class="col-lg-7">
+                <input type="text" class="form-control input-lg" name="D" placeholder="请输入药物SMILES表达式">
+            </div>
+            <div class="col-lg-1">
+                <a role="button" class="btn btn-info btn-block btn-lg" href="showDrugInfo" target="_blank">药物库</a>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="probability_input" class="col-lg-3 control-label probability_label">概率阈值:</label>
+            <div class="col-lg-1">
+                <input type="text" value="0.9" class="form-control input-sm" name="probability" placeholder="0-1">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row input_row_XXX">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-lg-3"></div>
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn btn-primary btn-block btn-lg btn_XXX">预测可能的靶标</button>
+                        </div>
+                        <div class="col-lg-3"></div>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+        </div>
+    </form>
+    {% if show_result %}
+        {% if error %}
+            <div class="row error_msg_XXX">
+                <div class="col-lg-12 ">
+                    {{ error_msg }}
+                </div>
+            </div>
+        {% else %}
+            <div class="container pic_show_XXX">
+                <div class="row">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2 show_label_molecule_XXX">
+                        药物分子图：
+                    </div>
+                    <div class="col-lg-7">
+                        <img src="/static/images_search_protein/drug.png" alt="Load image error">
+                    </div>
+                </div>
+            </div>
+            <table class="table table_res_XXX" style="word-break:break-all; word-wrap:break-spaces;">
+                <thead>
+                    <tr>
+                        <th style="width: 80%">靶标蛋白氨基酸序列</th>
+                        <th style="width: 15%">相互作用可能性</th>
+                        <th style="width: 5%">实际情况</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for line in lines_ans %}
+                        {% if line.real == True %}
+                            <tr class="success">
+                                {% elif line.real == False %}
+                            <tr class="danger">
+                                {% else %}
+                            <tr class="active">
+                        {% endif %}
+                    {% for item in line.pp %}
+                        <td>{{ item }}</td>
+                    {% endfor %}
+                    {% if line.real == True %}
+                        <td>作用</td>
+                    {% elif line.real == False %}
+                        <td>不作用</td>
+                    {% else %}
+                        <td>未知</td>
+                    {% endif %}
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>

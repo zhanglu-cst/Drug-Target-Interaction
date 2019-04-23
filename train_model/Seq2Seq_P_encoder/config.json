@@ -1,0 +1,34 @@
+{
+  "training": {
+    "optimizer": "adam",
+    "clip_c": 1,
+    "lrate": 0.001
+  },
+  "management": {
+    "monitor_loss": 500,
+    "print_samples": 20000
+  },
+  "data": {
+    "trg": " ",
+    "test_trg": " ",
+    "batch_size": 40,
+    "max_trg_length": 200,
+    "task": "translation",
+    "load_dir": false
+  },
+  "model": {
+    "dim": 1000,
+    "dim_trg": 1000,
+    "use_dropout": false,
+    "dim_word_src": 100,
+    "dim_word_trg": 100,
+    "n_layers_src": 2,
+    "n_layers_trg": 1,
+    "bidirectional": true,
+    "src_lang": "production",
+    "trg_lang": "reactants",
+    "decode": "greedy",
+    "seq2seq": "attention",
+    "optimizer": "adam"
+  }
+}

@@ -1,0 +1,59 @@
+html {
+    height:100%;
+}
+
+#body_div{
+    background-image:url("/static/search_drug_back2.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    height: 100%;
+}
+.up_title{
+    margin-top: 4%;
+    text-align: center;
+    color: #4472C4;
+    text-shadow: 2px 2px white;
+}
+
+.input_protein_form{
+    margin-top: 4%;
+}
+
+.input_row_XXX{
+    margin-top: 20px;
+    min-height: 50px;
+    height: 50px;
+}
+
+.probability_label{
+    font-size: 1.2em;
+    position: relative;
+    top: -3px;
+}
+
+.btn_XXX{
+    height: 45px;
+}
+
+.error_msg_XXX{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 50px;
+    text-align: center;
+    color: red;
+
+}
+
+.table_res_XXX{
+    table-layout:fixed;
+}
+
+
+.input_label_XXX{
+    font-size: 1.5em;
+}
+
+
