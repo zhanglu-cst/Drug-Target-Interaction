@@ -29,10 +29,10 @@ NOTE: The NN_classify_train.py should run after the Encoder_D_train.py and Encod
 python3 manage.py runserver 127.0.0.1:8000
 `
 
-Then open the chrome browser, the get to 127.0.0.1:8000
+Then open the chrome browser, and get to 127.0.0.1:8000
 
 ## Dataset
-The dataset is from [DrugBank](https://www.drugbank.ca).   
+The dataset is downloaded from [DrugBank](https://www.drugbank.ca).   
 
 Data files used in training process is in the data_process_to_fingerprint directory.
 
